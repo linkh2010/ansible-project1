@@ -1,6 +1,16 @@
 ---
-- hosts: all
-  tasks:
-    - name: update
-      apt: update_cache=true
-      become: yes
+- hosts: 192.168.148.133
+    tasks:
+        - name: apt update
+            apt: update_cache=true
+            become: yes
+        - name: install net-tools
+            apt:
+                name: net-tools
+                state: latest
+            become: yes
+        - name: install ddclient
+            apt:
+                name: ddclient
+                state: latest
+            become: yes
