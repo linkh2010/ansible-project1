@@ -2,4 +2,5 @@
 - hosts: all
   tasks:
     - name: update
-      apt: update_cache
+      apt: update_cache=true
+      sudo: yes
