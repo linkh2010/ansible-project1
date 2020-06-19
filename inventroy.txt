@@ -1,1 +1,1 @@
-192.168.148.133 ansible_connection=ssh ansible_user=ansibleadmin ansible_ssh_pass=Pa$$w0rd
+192.168.148.133 ansible_connection=ssh ansible_user=ansibleadmin ansible_ssh_pass=Pa$$w0rd ansible_become=yes
