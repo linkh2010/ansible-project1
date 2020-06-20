@@ -12,10 +12,10 @@
         state: latest
       become: yes
     - name: create pritunl repo file
-      copy:
-        dest: /etc/apt/source.list.d/pritunl.list
-        content: |
-          deb https://repo.pritunl.com/stable/apt focal main
+      apt_repository:
+        repo: deb https://repo.pritunl.com/stable/apt focal main
+        state: present
+        filename: pritunl.list
       become: yes
     - name: add pritunl apt key
       apt_key:
