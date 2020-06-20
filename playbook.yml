@@ -11,6 +11,15 @@
         name: ddclient
         state: latest
       become: yes
+    - name: add pritunl apt key1
+      apt_key:
+        keyserver: hkp://keyserver.ubuntu.com
+        id: 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+    - name: add pritunl apt key2
+      apt_key:
+        keyserver: hkp://keyserver.ubuntu.com
+        id: E162F504A20CDF15827F718D4B7C549A058F8B6B
+      become: yes
     - name: create pritunl repo file for pritunl
       apt_repository:
         repo: deb https://repo.pritunl.com/stable/apt focal main
@@ -23,15 +32,6 @@
         state: present
         update_cache: no
         filename: mongodb-org-4.2.list
-      become: yes
-    - name: add pritunl apt key1
-      apt_key:
-        keyserver: hkp://keyserver.ubuntu.com
-        id: 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-    - name: add pritunl apt key2
-      apt_key:
-        keyserver: hkp://keyserver.ubuntu.com
-        id: E162F504A20CDF15827F718D4B7C549A058F8B6B
       become: yes
     - name: apt update
       apt: update_cache=true
