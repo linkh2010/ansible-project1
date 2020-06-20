@@ -26,9 +26,9 @@
     - name: apt update
       apt: update_cache=true
       become: yes
-    - name: install pritunl
+    - name: uninstall pritunl client
       apt:
         name: pritunl-client-electron
-        state: latest
+        state: absent
       become: yes
 
