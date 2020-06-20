@@ -1,9 +1,6 @@
 ---
 - hosts: 192.168.148.133
   tasks:
-    - name: apt update
-      apt: update_cache=true
-      become: yes
     - name: install net-tools
       apt:
         name: net-tools
@@ -14,3 +11,23 @@
         name: ddclient
         state: latest
       become: yes
+    - name: create pritunl repo file
+      copy:
+        dest: '/etc/apt/source.list.d/pritunl.list'
+        content: |
+          deb https://repo.pritunl.com/stable/apt focal main
+      become: yes
+     - name: add pritunl apt key
+       apt_key:
+         keyserver: hkp://keyserver.ubuntu.com
+         id: 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+       become: yes
+     - name: apt update
+       apt: update_cache=true
+       become: yes
+     -name: install pritunl
+       apt:
+        name: pritunl-client-electron
+        state: latest
+       become: yes
+       
