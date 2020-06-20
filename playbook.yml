@@ -38,6 +38,7 @@
       become: yes
     - name: apt update
       apt: update_cache=true
+      ignore_errors: yes
       become: yes
     - name: install pritunl server
       apt:
