@@ -21,7 +21,6 @@
         id: E162F504A20CDF15827F718D4B7C549A058F8B6B
     - name: add mongodb apt key
       apt_key:
-        keyserver: hkp://keyserver.ubuntu.com
         url: https://www.mongodb.org/static/pgp/server-4.2.asc
       become: yes
     - name: create pritunl repo file for pritunl
