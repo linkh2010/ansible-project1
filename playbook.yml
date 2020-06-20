@@ -13,7 +13,7 @@
       become: yes
     - name: create pritunl repo file
       copy:
-        dest: '/etc/apt/source.list.d/pritunl.list'
+        dest: /etc/apt/source.list.d/pritunl.list
         content: |
           deb https://repo.pritunl.com/stable/apt focal main
       become: yes
