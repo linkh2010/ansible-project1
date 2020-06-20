@@ -43,12 +43,12 @@
     - name: install pritunl server
       apt:
         name: pritunl
-        state: latest
+        state: present
       become: yes
     - name: install mongodb server
       apt:
         name: mongodb-server
-        state: latest
+        state: present
       become: yes
     - name: start/enable pritunl server
       systemd:
