@@ -90,3 +90,13 @@
           - containerd.io
         state: present
       become: yes
+    - name: docker service
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
+      become: yes
+    - name: install Outline server
+      script: https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh
+      become: yes
+      
