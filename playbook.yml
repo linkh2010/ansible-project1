@@ -96,7 +96,9 @@
         state: started
         enabled: yes
       become: yes
-    - name: install Outline server
-      script: https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh
+    - name: download Outline server install script
+      get_url: https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh
+    - name: execute Outline server install script
+      shell: /tmp/install_server.sh
       become: yes
-      
+
