@@ -110,4 +110,6 @@
       shell: cat access.txt
       args:
         chdir: /opt/outline
-
+      register: outline_key
+    - name: print Outline server key
+      debug: msg="{{ outline_key }}"
