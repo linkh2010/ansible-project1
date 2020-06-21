@@ -112,4 +112,4 @@
         chdir: /opt/outline
       register: outline_key
     - name: print Outline server key
-      debug: msg="{{ outline_key }}"
+      debug: msg="{{ outline_key['stdout_lines'] }}"
