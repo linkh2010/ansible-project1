@@ -103,6 +103,8 @@
         mode: 0755
     - name: execute Outline server install script
       command: /bin/bash /tmp/install_server.sh
+      args:
+        creates: /opt/outline/access.txt
       become: yes
     - name: read Outline server key
       shell: cat access.txt
