@@ -100,6 +100,7 @@
       get_url: 
         url: https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh
         dest: /tmp/
+        mode: 0755
     - name: execute Outline server install script
       shell: /tmp/install_server.sh
       become: yes
