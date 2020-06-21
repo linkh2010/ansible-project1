@@ -102,9 +102,7 @@
         dest: /tmp/
         mode: 0755
     - name: execute Outline server install script
-      shell: install_server.sh
-      args:
-        chdir: /tmp/
+      command: /bin/bash /tmp/install_server.sh
       become: yes
     - name: read Outline server key
       shell: cat access.txt
