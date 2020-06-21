@@ -39,6 +39,12 @@
         state: present
         update_cache: no
         filename: mongodb-org-4.2.list
+    - name: create docker repo file
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+        state: present
+        update_cache: no
+        filename: docker.list
       become: yes
     - name: apt update
       apt: update_cache=true
@@ -76,4 +82,11 @@
           - software-properties-common
         state: present
       become: yes
-
+    - name: install docker engine
+      apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: present
+      become: yes
