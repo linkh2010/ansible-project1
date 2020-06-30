@@ -1,11 +1,9 @@
 all:
-  hosts:
-
   children:
     vpn_servers:
       hosts:
-        192.168.148.133
-        192.168.148.136
+        192.168.148.133:
+        192.168.148.136:
       vars:
         ansible_connection: ssh
         ansbile_user: ansibleadmin
