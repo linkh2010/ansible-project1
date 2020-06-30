@@ -1,1 +1,12 @@
-192.168.148.133 ansible_connection=ssh ansible_user=ansibleadmin ansible_ssh_pass=Pa$$w0rd ansible_become=yes ansible_sudo_pass=Pa$$w0rd
+all:
+  hosts:
+
+  children:
+    vpn_servers:
+      hosts:
+        192.168.148.133:
+        192.168.148.136:
+      vars:
+        ansible_connection: ssh
+        ansbile_user: ansibleadmin
+        ansbile_ssh_pass: Pa$$w0rd
