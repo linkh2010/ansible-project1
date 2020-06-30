@@ -1,3 +1,4 @@
+---
 all:
   children:
     vpn_servers:
