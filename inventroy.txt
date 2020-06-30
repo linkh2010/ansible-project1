@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 all:
   children:
     vpn_servers:
@@ -8,3 +9,6 @@ all:
         ansible_connection: ssh
         ansbile_user: ansibleadmin
         ansbile_ssh_pass: Pa$$w0rd
+=======
+192.168.148.133 ansible_connection=ssh ansible_user=ansibleadmin ansible_ssh_pass=Pa$$w0rd ansible_become=yes ansible_sudo_pass=Pa$$w0rd
+>>>>>>> parent of 95a6c69... Update inventroy.txt
