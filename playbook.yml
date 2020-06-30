@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: vpn_servers
   tasks:
     - name: install net-tools
       apt:
